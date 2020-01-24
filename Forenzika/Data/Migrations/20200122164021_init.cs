@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Forenzika.Data.Migrations
 {
-    public partial class Entietet : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,6 +35,26 @@ namespace Forenzika.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Personi", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RastiViewModel",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    EmriRastit = table.Column<string>(nullable: true),
+                    Vendi = table.Column<string>(nullable: true),
+                    Pershkrimi = table.Column<string>(nullable: true),
+                    Viktimi = table.Column<int>(nullable: false),
+                    Hetuesi = table.Column<int>(nullable: false),
+                    IAkuzuari = table.Column<int>(nullable: false),
+                    Kategoria = table.Column<int>(nullable: false),
+                    Data = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RastiViewModel", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -131,6 +151,9 @@ namespace Forenzika.Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Foto");
+
+            migrationBuilder.DropTable(
+                name: "RastiViewModel");
 
             migrationBuilder.DropTable(
                 name: "Rasti");

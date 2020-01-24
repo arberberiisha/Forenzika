@@ -5,13 +5,28 @@
     <UserSecretsId>aspnet-Forenzika-0227CE02-BB51-4437-B1D2-22D8EC89AA03</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20200118204716_Entietet.cs" />
+    <Compile Remove="Data\Migrations\20200118204716_Entietet.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200122162252_ids.cs" />
+    <Compile Remove="Data\Migrations\20200122162252_ids.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200122162520_ini.cs" />
+    <Compile Remove="Data\Migrations\20200122162520_ini.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
   </ItemGroup>
 
 </Project>

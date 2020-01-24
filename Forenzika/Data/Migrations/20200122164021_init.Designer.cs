@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Forenzika.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200118204716_Entietet")]
-    partial class Entietet
+    [Migration("20200122164021_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -125,6 +125,42 @@ namespace Forenzika.Data.Migrations
                     b.HasIndex("ViktimiId");
 
                     b.ToTable("Rasti");
+                });
+
+            modelBuilder.Entity("Forenzika.Models.RastiViewModel", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Data")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmriRastit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Hetuesi")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IAkuzuari")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Kategoria")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Pershkrimi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Vendi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Viktimi")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("RastiViewModel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

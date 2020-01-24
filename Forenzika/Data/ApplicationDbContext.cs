@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Forenzika.Models;
 
 namespace Forenzika.Data
 {
@@ -16,5 +17,6 @@ namespace Forenzika.Data
             : base(options)
         {
         }
+        public DbSet<Forenzika.Models.RastiViewModel> RastiViewModel { get; set; }
     }
 }
