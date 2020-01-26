@@ -59,7 +59,7 @@ namespace Forenzika.Controllers
             }
             IdentityUser user = new IdentityUser
             {
-                UserName = registerForm.Username,
+                UserName = registerForm.Email,
                 Email = registerForm.Email,
                 EmailConfirmed = true
             };
@@ -128,7 +128,6 @@ namespace Forenzika.Controllers
 
         public class RegisterForm
         {
-            public string Username { get; set; }
             public string Email { get; set; }
             public string PhoneNumber { get; set; }
             public string Password { get; set; }

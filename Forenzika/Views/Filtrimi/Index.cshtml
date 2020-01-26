@@ -1,0 +1,57 @@
+﻿@model Forenzika.Models.Filtrimi
+
+@{ 
+    ViewData["Title"] = "Index";
+    var kategorite = (List<Kategoria>)ViewData["kategorite"];
+    var hetuesit = (List<IdentityUser>)ViewData["hetuesit"];
+}
+
+<h1>Index</h1>
+
+<form method="post">
+    <div class="row">
+        <div class="form-group col-md-2">
+            <label for="fromDate">From DAte</label>
+            <input type="date" name="fromDate" id="fromDate" class="form-control" />
+        </div>
+        <div class="form-group col-md-2">
+            <label for="toDate">To DAte</label>
+            <input type="date" name="toDate" id="toDate" class="form-control" />
+        </div>
+        <div class="form-group col-md-2">
+            <label for="kategoria">Kategoria</label>
+            <select name="kategoria">
+                <option value="">Zgjidh kategorine</option>
+                @foreach (var kategoria in kategorite)
+                {
+                    <option value="@kategoria.Id">@kategoria.Emertimi</option>
+                }
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="hetuesi">Hetuesi</label>
+            <select name="hetuesi">
+                @foreach (var hetuesi in hetuesit)
+                {
+                    <option value="@hetuesi.Id">@hetuesi.Email</option>
+                }
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <button type="submit">Filtro</button>
+        </div>
+    </div>
+</form>
+
+@if (Model.rastet.Count > 0)
+{
+<ul>
+    @foreach (var rasti in Model.rastet)
+    {
+        <li>@rasti.EmriRastit @rasti.Data</li>
+    }
+</ul>
+
+}
+
+
